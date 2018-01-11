@@ -1,0 +1,394 @@
+echo $LINES
+echo $COLUMNS
+
+
+# Active Player Variables
+playerName="user" #"$USER"
+aggression=5
+judgement=3
+guile=4
+valor=2
+
+# COIN tracker int from 1 - 10 where 1 is bad and 10 is good
+intlRep=5
+localRep=5
+resistRep=5
+
+#SIG tracker - 0 to 4 where 0 is down and 3 is ults-enabled
+signalState=0
+
+
+#player storage system
+
+
+#sub drawScreen:
+#Line 1 start
+clear
+#80col display header/footer
+echo "-========--========--========--========++========--========--========--========-"
+echo \n
+#Line 1 end
+
+#line 2 start
+echo "                                       ++                                       "
+echo \n
+#line 2 end
+
+#line 3 start
+echo "         "
+# original line follows-- print "         NAMEXXRUNSFOR25CHARACTERS"
+echo $playerName
+
+
+#badcode follows:
+
+#samplecode for counting 's' in a string follows:
+# x="This is a test"
+# y="${x//[^s]}"
+# echo "$y"
+# echo "${#y}"
+
+whitespace=(25)
+for ((counter = $whitespace ; counter > 0; counter--))
+do
+echo " "
+done
+#end badcode
+
+
+echo "     ++  "
+
+#Int'l rep display
+for ((counter = 1 ; counter > 11; counter++))
+do
+if [ $counter -eq $intlRep ]
+ then
+ echo "Û"
+ elif [ $counter -gt 7]
+  then 
+  echo -e "\033[33m ²" #set echo green
+ elif [ $counter -lt 4]
+  then
+  echo -e "\033[31m ²" #set echo red
+ else
+ echo -e "\033[0m ²" #set echo preferredTerminalColor
+fi
+done
+echo "INT'L POPULATION"
+echo \n
+#line 3 end
+
+#line 4 start
+echo "                                       ++                                       "
+echo \n
+#line 4 end
+
+#line 5 start
+echo "                                       ++  "
+
+#local rep display
+for ((counter = 1 ; counter > 11; counter++))
+do
+if [ $counter == $localRep]
+ then
+ echo "Û"
+ elif [ $counter -gt 7]
+  then 
+  echo -e "\033[33m ²" #set echo green
+ elif [ $counter -lt 4]
+  then
+  echo -e "\033[31m ²" #set echo red
+ else
+ echo -e "\033[0m ²" #set echo preferredTerminalColor
+fi
+done
+echo "LOCAL POPULATION"
+echo \n
+
+#Line 5 end
+
+#line 6 start
+echo "           .::::::::::::::::.          ++                                         "
+echo /n
+#Line 6 end
+
+#line 7 start
+echo "          ::                ::         ++  "
+
+#Resistance forces rep display
+for ((counter = 1 ; counter > 11; counter++))
+do
+if [ $counter == $resistRep]
+ then
+ echo "Û"
+ elif [ $counter -gt 7]
+  then 
+  echo -e "\033[33m ²" #set echo green
+ elif [ $counter -lt 4]
+  then
+  echo -e "\033[31m ²" #set echo red
+ else
+ echo -e "\033[0m ²" #set echo preferredTerminalColor
+fi
+done
+echo "RESISTANCE FORCE"
+echo \n
+
+#Line 7 end
+
+#Line 8 Start
+echo "      ÉÍÍÍ::                ::         ++                                       "
+echo \n
+#Line 8 End
+#Line 9 Start
+echo "      º   ::  TI-4000 4A    ::ÍÍÍÍÍ»   ++========--========--========--========-"
+echo \n
+#Line 9 End
+#Line 10 Start
+echo "      º   ::                ::     º   ++                                       "
+echo \n
+#Line 10 End
+#Line 11 Start
+echo "     É¼   ::        750MHz  ::Í»   º   ++          THE SIGNAL IS . . .    "
+if [ $signalState -gt 0]
+then
+echo "UP!   "
+else
+echo "      "
+fi
+echo \n
+#Line 11 End
+#Line 12 Start
+echo "     º    ::                :: º   º   ++                                       "
+echo \n
+#Line 12 End
+
+#Line 13 Start
+echo "     º   É::                :: º   º   ++"
+if [ $signalState -gt 0]
+then
+echo "                                       "
+else
+echo "  DDDDDDDD    OOOO   WW    WW NN    NN  "
+fi
+echo \n
+#Line 13 End
+
+#Line 14 Start
+echo "     º   º::                :: º   º   ++"
+if [ $signalState -eq 0]
+then
+echo "   DD   DDD  OO  OO  WW    WW NNN   NN "
+else
+echo "    \`:/+++/:\`        "
+if [ $signalState -gt 2]
+then
+echo "è²è"
+else
+echo " · "
+fi
+echo "               "
+fi
+echo \n
+#Line 14 End
+
+#Line 15 Start
+echo "     º   º \`::::::::::::::::'  º   º   ++"
+if [ $signalState -eq 0]
+then
+echo "   DD    DD OO    OO WW    WW NNN   NN "
+else
+echo "   -+/+---+/+-       "
+if [ $signalState -gt  2]
+then
+echo " ² "
+else
+echo " º "
+fi
+echo "  Subroutines    "
+echo \n
+#Line 15 End
+
+#Line 16 Start
+echo "     º   º                     º  É¼   ++"
+if [ $signalState -eq 0]
+then
+echo "   DD    DD OO    OO WW    WW NNNN  NN "
+else
+echo "   ++:.   \`/++       "
+if [ $signalState -gt 2]
+then
+echo " ² "
+else
+echo " º "
+fi
+echo "               "
+fi
+echo \n
+#Line 16 End
+
+#Line 17 Start
+echo "     º   ÓÄÄ Aggression ("
+echo $aggression
+echo ")    º  º    ++"
+if [ $signalState -eq 0]
+then
+echo "   DD    DD OO    OO WW    WW NNNN  NN "
+else
+echo "   ///-.-.-///     -=="
+if [ $signalState -gt 2]
+then
+echo "²"
+else
+echo "º"
+fi
+echo "=====--========-"
+fi
+echo \n
+#Line 17 End
+
+#Line 18 Start
+echo "     º                         º  º    ++"
+if [ $signalState -eq 0]
+then
+echo "   DD    DD OO    OO WW    WW NNNNN NN "
+else
+echo "    -.\`NmM.\`-        "
+if [ $signalState -gt 1]
+then
+echo " ² "
+else
+echo " º "
+fi
+echo "               "
+fi
+echo \n
+#Line 18 End
+
+#Line 19 Start
+echo "     ÓÄÄÄÄÄÄ Guile      ("
+echo $guile
+echo ")    º  º    ++"
+if [ $signalState -eq 0]
+then
+echo "   DD    DD OO    OO WW WW WW NN NN NN "
+else
+echo "      /M.ms          "
+if [ $signalState -gt 1]
+then
+echo "è²è"
+else
+echo " º "
+fi
+echo "  Blade Servers"
+fi
+echo \n
+#Line 19 End
+
+#Line 20 Start
+echo "                               º  º    ++"
+if [ $signalState -eq 0]
+then
+echo "   DD    DD OO    OO WW WW WW NN NNNNN "
+else 
+echo "      dNhNN          "
+if [ $signalState -gt 1]
+then
+echo " ² "
+else
+echo " º "
+fi
+echo "               "
+fi
+echo \n
+#Line 20 End
+
+#Line 21 Start
+echo "             Judgement  ("
+echo $judgement
+echo ") ÄÄÄ½  º    ++"
+if [ $signalState -eq 0]
+then
+echo "   DD    DD OO    OO WW WW WW NN NNNNN "
+else 
+echo "     .Md:hM/       -=="
+if [ $signalState -gt 1]
+then
+echo "²"
+else
+echo "º"
+fi
+echo "=====--========-"
+fi
+echo \n
+#Line 21 End
+
+#Line 22 Start
+echo "                                  º    ++"
+if [ $signalState -eq 0]
+then
+echo "   DD    DD OO    OO WWWWWWWW NN  NNNN "
+else
+echo "     sNhshmh         "
+if [ $signalState -gt 0]
+then
+echo " ² "
+else
+echo " º "
+fi
+echo "               "
+fi
+echo \n
+#Line 22 End
+
+#Line 23 Start
+echo "             Valor      ("
+echo $valor
+echo ") ÄÄÄÄÄÄ½    ++"
+if [ $signalState -eq 0]
+then
+echo "   DD   DDD  OO  OO  WWW  WWW NN  NNNN "
+else 
+echo "    \`Nd/./hM.        "
+if [ $signalState -gt 0]
+then
+echo "è²è"
+else
+echo " º "
+fi
+echo "  Power Modules"
+fi
+echo \n
+#Line 23 End
+
+#Line 24 Start
+echo "                                       ++"
+if [ $signalState -eq 0]
+then echo "  DDDDDDDD    OOOO    WW  WW  NN   NNN "
+else
+echo "    /d/   +ho        "
+if [ $signalState -gt 0]
+then
+echo " ² "
+else
+echo " ½ "
+fi
+echo "               "
+fi
+echo \n
+#Line 24 End
+
+read keyInput
+if [ $keyInput = "a"]
+then
+#roll aggression
+elif [ $keyInput = "g" || "s" ]
+then
+#Guile check
+elif [ $keyInput = "j" || "d" ]
+then
+#Judgement check 
+elif [ $keyInput = "v" || "f" ]
+then
+#Virtue check 
+fi
