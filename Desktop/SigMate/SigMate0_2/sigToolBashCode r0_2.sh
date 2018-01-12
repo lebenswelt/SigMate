@@ -89,12 +89,18 @@ fi
 #for debugging
 if [ $keyInput = "+" ]
 then
+if [ $signalState -lt 3 ]
+then
 signalState=$(($signalState+1))
-message="     The signal is boosted!                    " 
+message="     The signal is boosted!                    "
+fi 
 elif [ $keyInput = "-" ]
+then
+if [ $signalState -gt 0 ]
 then
 signalState=$(($signalState-1))
 message="     The signal is dropping!                   "
+fi
 fi
 
 #output dossiers
