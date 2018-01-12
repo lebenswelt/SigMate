@@ -103,15 +103,16 @@ message="     The signal is dropping!                   "
 fi
 fi
 
-#output dossiers
+#output dossiers -- I should move the dossier display code to a separate script
+#That would allow me to avoid repeating code and (hopefully) simplify the process of adding new dossier content
 if [[ $keyInput = "dossier "* ]]
 then
 #scratchInt=(${#keyInput}-8)
 #length of string
 #string extraction of negative (length of string - 8)
 clear
-cat dossiers/${keyInput: -(${#keyInput}-8)}
-read -p "PRESS RETURN . . . "
+cat dossiers/${keyInput: -(${#keyInput}-8)} | more
+read -p "END OF FILE -- PRESS RETURN . . . "
 fi
 
 if [[ $keyInput = "i+" ]]

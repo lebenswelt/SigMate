@@ -26,7 +26,7 @@ printf "%b" $playerName
 # echo "${#y}"
 
 #Hardcoded during firstpass testing
-whitespace=(25-${#USER})
+whitespace=(25-${#playerName})
 
 for ((counter = $whitespace ; counter > 0; counter--))
 do
