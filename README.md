@@ -1,5 +1,6 @@
 # SigMate
 # A game companion application for the tabletop RPG Sigmata
+# written in POSIX shell scripting by Eric Lawson
 
 #Motd--
 #Grim war-gods from remote ages have stalked upon the scene. International good faith; the public law of Europe; the greatest good of the greatest number; the ideal of a fertile, tolerant, progressive, demilitarized, infinitely varied society, is shattered. Dictators ride to and fro upon tigers from which they dare not dismount. And the tigers are getting hungry. 	Winston Churchill, Armistice--Or Peace? (1937)
