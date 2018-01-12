@@ -6,8 +6,33 @@ read -p "ENTER USERNAME >" keyInput
 
 if [ ! -f saves/${keyInput} ]
 then
-printf %b "USER DOES NOT EXIST -- PRESS RETURN"
-read keyInput
+printf %b "USER DOES NOT EXIST -- CREATE USER? (Y/N)"
+read yesNo
+	if [ $yesNo = "Y" ]
+	then
+printf %b "CREATING USER..."
+printf %b "Full Name: "
+read yesNo
+playerName=$yesNo
+printf %b "Aggression: "
+read yesNo
+aggression=$yesNo
+printf %b "Guile: "
+read yesNo
+guile=$yesNo
+printf %b "Judgement: "
+read yesNo
+judgement=$yesNo
+printf %b "Valor: "
+read yesNo
+valor=$yesNo
+
+printf %b "GENERATING USER DATAFILE..."
+printf %b "$playerName\n$aggression\n$guile\n$judgement\n$valor" >> saves/${keyInput}
+break
+	else
+printf %b "USER NOT CREATED-- EXITING PROCESS"
+	fi
 
 else
 playerName=$(head -1 saves/${keyInput})
