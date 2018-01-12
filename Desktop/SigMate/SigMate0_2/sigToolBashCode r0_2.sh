@@ -114,6 +114,31 @@ cat dossiers/${keyInput: -(${#keyInput}-8)}
 read -p "PRESS RETURN . . . "
 fi
 
+if [[ $keyInput = "i+" ]]
+then
+intlRep=$(($intlRep+1))
+fi
+if [[ $keyInput = "i-"* ]]
+then
+intlRep=$(($intlRep-1))
+fi
+if [[ $keyInput = "l+" ]]
+then
+localRep=$(($localRep+1))
+fi
+if [[ $keyInput = "l-"* ]]
+then
+localRep=$(($localRep-1))
+fi
+if [[ $keyInput = "r+" ]]
+then
+resistRep=$(($resistRep+1))
+fi
+if [[ $keyInput = "r-"* ]]
+then
+resistRep=$(($resistRep-1))
+fi
+
 if [ $keyInput = "~" ]
 then
 break
