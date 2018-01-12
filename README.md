@@ -17,6 +17,11 @@
 #changelog follows
 
 #r0.2 011118
+#placeholders for #dossiers/chad and #dossiers/irving were added
+#dossiers/blue was added -- Still needs attribution
+#dossiers/daylight was added -- Still needs attribution
+#dossier now cats "| more" by default
+#screenDraw now accurately counts whitespace around playerName
 #reputation values can be modified now
 #signalState now has a sanity check
 #new character generation has been added
