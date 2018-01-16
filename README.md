@@ -16,7 +16,11 @@
 
 #changelog follows
 
-#r0.2 011118
+#r0.2 011618
+#publishing current build as revision 0.2
+#splash page updated and added as part of loadcharacter
+#directory reorganized to better take advantage of git's built-in version control
+#     011118
 #placeholders for #dossiers/chad and #dossiers/irving were added
 #dossiers/blue was added -- Still needs attribution
 #dossiers/daylight was added -- Still needs attribution
